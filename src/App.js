@@ -1,10 +1,11 @@
 import './App.css';
 import Product from "./components/Product";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>ola</h1>
+      <Navbar />
       <Product />
     </div>
   );

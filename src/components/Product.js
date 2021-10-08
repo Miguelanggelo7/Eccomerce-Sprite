@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AddShoppingCart } from '@mui/icons-material';
-import { maxWidth } from '@mui/system';
+import accounting from 'accounting'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,10 +19,6 @@ const useStyles = makeStyles((theme) => ({
   },
   action: {
     marginTop: '1rem',
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%'
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -64,14 +60,13 @@ export default function Product() {
             color='GrayText'
             className={classes.action}
           >
-            {50}
+            {accounting.formatMoney(50)}
           </Typography>
         }
         title="Shoes"
         subheader="in Stock"
       />
       <CardMedia
-        className={classes.media}
         component="img"
         height="194"
         image="https://dm3.com/wp-content/uploads/2017/09/zapatos-nike-795x400.png"
