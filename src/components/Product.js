@@ -23,10 +23,6 @@ const useStyles = makeStyles((theme) => ({
   action: {
     marginTop: '1rem',
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%'
-  },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -74,7 +70,6 @@ export default function Product({product : {id, name, productType, image, price,
         subheader="in Stock"
       />
       <CardMedia
-        className={classes.media}
         component="img"
         height="194"
         image="https://dm3.com/wp-content/uploads/2017/09/zapatos-nike-795x400.png"

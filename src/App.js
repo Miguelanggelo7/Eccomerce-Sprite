@@ -1,11 +1,12 @@
 import './App.css';
 import Product from "./components/Product";
 import Products from "./components/Products";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>hola</h1>
+      <Navbar />
       <Products/>
     </div>
   );
