@@ -24,15 +24,16 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Products() {
   const classes = useStyles();
+  console.log(products)
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid className={classes.centeredGrid} container spacing={3}>
         {
-          products.map(product => {
+          products.map(product => (
             <Grid item xs={12} sm={6} md={4} lg={3} >
               <Product key={product.id} product={product}/>
             </Grid>
-          })
+          ))
         }
       </Grid>
     </Box>
