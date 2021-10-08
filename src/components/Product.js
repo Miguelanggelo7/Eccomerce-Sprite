@@ -12,10 +12,13 @@ import { makeStyles } from '@mui/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AddShoppingCart } from '@mui/icons-material';
 import { maxWidth } from '@mui/system';
+import accounting from 'accounting';
+import products from "../product-data";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    margin: 'auto',
   },
   action: {
     marginTop: '1rem',
@@ -47,7 +50,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Product() {
+export default function Product({product : {id, name, productType, image, price, rating, description}}) {
   const [expanded, setExpanded] = React.useState(false);
   const classes = useStyles();
 
@@ -64,10 +67,10 @@ export default function Product() {
             color='GrayText'
             className={classes.action}
           >
-            {50}
+            {accounting.formatMoney(price, "$")}
           </Typography>
         }
-        title="Shoes"
+        title={name}
         subheader="in Stock"
       />
       <CardMedia
