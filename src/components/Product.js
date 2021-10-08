@@ -72,19 +72,19 @@ export default function Product({product : {id, name, productType, image, price,
       <CardMedia
         component="img"
         height="194"
-        image="https://dm3.com/wp-content/uploads/2017/09/zapatos-nike-795x400.png"
+        image={image}
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Running Shoes
+          {productType}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="Add to cart">
           <AddShoppingCart />
         </IconButton>
-        {Array(4)
+        {Array(rating)
           .fill()
           .map((_, i) => (
             <p>&#11088;</p>
@@ -102,7 +102,7 @@ export default function Product({product : {id, name, productType, image, price,
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-            Shoes for running
+            {description}
           </Typography>
         </CardContent>
       </Collapse>
