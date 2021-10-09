@@ -22,9 +22,9 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function Products() {
+const Products = () =>  {
   const classes = useStyles();
-  console.log(products)
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid className={classes.centeredGrid} container spacing={3}>
@@ -39,3 +39,5 @@ export default function Products() {
     </Box>
   );
 }
+
+export default Products;

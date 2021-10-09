@@ -1,13 +1,14 @@
 import './App.css';
-import Product from "./components/Product";
 import Products from "./components/Products";
 import Navbar from "./components/Navbar";
+import CheckoutPage from './components/CheckoutPage';
 
 const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Products/>
+      <CheckoutPage />
+      {/* <Products/> */}
     </div>
   );
 }

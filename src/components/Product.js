@@ -46,7 +46,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Product({product : {id, name, productType, image, price, rating, description}}) {
+const Product = ({product : {id, name, productType, image, price, rating, description}}) => {
   const [expanded, setExpanded] = React.useState(false);
   const classes = useStyles();
 
@@ -73,7 +73,6 @@ export default function Product({product : {id, name, productType, image, price,
         component="img"
         height="194"
         image={image}
-        alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -109,3 +108,5 @@ export default function Product({product : {id, name, productType, image, price,
     </Card>
   );
 }
+
+export default Product;

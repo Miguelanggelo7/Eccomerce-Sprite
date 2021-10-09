@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+const Navbar = () => {
   const classes = useStyles();
 
   return (
@@ -61,3 +61,5 @@ export default function ButtonAppBar() {
     </Box>
   );
 }
+
+export default Navbar;
