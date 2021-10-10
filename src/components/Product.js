@@ -66,7 +66,6 @@ const Product = ({product : {id, name, productType, image, price, rating, descri
         rating
       }
     });
-    console.log(basket)
   }
 
   return (

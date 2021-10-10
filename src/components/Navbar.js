@@ -9,6 +9,7 @@ import { makeStyles } from '@mui/styles';
 import { Badge, IconButton } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
+  const [{basket}, dispatch] = useStateValue();
 
   return (
     <Box className={classes.root}>
@@ -53,7 +55,7 @@ const Navbar = () => {
             </Button>
             <Link to='checkout-page'>
               <IconButton aria-label='show cart-items' color='inherit' >
-                <Badge badgeContent={2} color='error'> 
+                <Badge badgeContent={basket?.length} color='error'> 
                   <ShoppingCart fontSize='large' color='secondary'/>
                 </Badge>
               </IconButton>
