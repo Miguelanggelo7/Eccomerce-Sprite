@@ -5,11 +5,12 @@ import { Button } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '20vh'
   },
-  button: {
-
-  }
 }))
 
 const Total = () => {
@@ -19,7 +20,7 @@ const Total = () => {
     <div className={classes.root}>
       <h5>Total items: 3</h5>
       <h5>{accounting.formatMoney(777)}</h5>
-      <Button className={classes.button} variant='contained' color='primary'>Check out</Button>
+      <Button sx={{ marginTop: '2rem' }} variant='contained' color='primary'>Check out</Button>
     </div>
   )
 }

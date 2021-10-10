@@ -8,6 +8,7 @@ import logo from "../assets/amazon-logo.png"
 import { makeStyles } from '@mui/styles';
 import { Badge, IconButton } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,9 +38,11 @@ const Navbar = () => {
     <Box className={classes.root}>
       <AppBar position="fixed" className={classes.appBar} >
         <Toolbar>
-          <IconButton edge='start' color='inherit' aria-label='menu' >
-            <img  className={classes.image} src={logo} />
-          </IconButton>
+          <Link to='/'>
+            <IconButton edge='start' color='inherit' aria-label='menu' >
+                <img  className={classes.image} src={logo} />
+            </IconButton>
+          </Link>
           <div className={classes.grow} />
           <Typography variant="h6" color='textPrimary' component='p'>
             Hello Guest
@@ -48,11 +51,13 @@ const Navbar = () => {
             <Button color='secondary' variant='outlined'>
               <strong>Sign in</strong>
             </Button>
-            <IconButton aria-label='show cart-items' color='inherit' >
-              <Badge badgeContent={2} color='error'> 
-                <ShoppingCart fontSize='large' color='secondary'/>
-              </Badge>
-            </IconButton>
+            <Link to='checkout-page'>
+              <IconButton aria-label='show cart-items' color='inherit' >
+                <Badge badgeContent={2} color='error'> 
+                  <ShoppingCart fontSize='large' color='secondary'/>
+                </Badge>
+              </IconButton>
+            </Link>
             
           </div>
           

@@ -3,8 +3,8 @@ import { makeStyles } from '@mui/styles';
 import { Grid } from '@mui/material';
 import { Typography } from '@mui/material';
 import CheckoutCard from './CheckoutCard';
-import products from "../product-data";
 import Total from './Total';
+import { useStateValue } from '../StateProvider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,18 +15,22 @@ const useStyles = makeStyles((theme) => ({
 
 const CheckoutPage = () => {
   const classes = useStyles();
+  const [{basket}, dispatch] = useStateValue();
 
-  const FormRow = () => (
+
+  function FormRow () {
+    return (
     <React.Fragment>
       {
-        products.map((item) => (
+        basket?.map((item) => (
           <Grid item xs={12} sm={8} md={6} lg={4}>
             <CheckoutCard key={item.id} product={item}/>
           </Grid>
         ))
       }
     </React.Fragment>
-  )
+    )
+    }
 
   return (
     <div className={classes.root} >
