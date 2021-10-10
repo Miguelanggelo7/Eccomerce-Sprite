@@ -48,9 +48,11 @@ const Navbar = () => {
             Hello Guest
           </Typography>
           <div className={classes.button}>
-            <Button color='secondary' variant='outlined'>
-              <strong>Sign in</strong>
-            </Button>
+            <Link to='/signin'>
+              <Button color='secondary' variant='outlined'>
+                <strong>Sign in</strong>
+              </Button>
+            </Link>
             <Link to='checkout-page'>
               <IconButton aria-label='show cart-items' color='inherit' >
                 <Badge badgeContent={2} color='error'> 
